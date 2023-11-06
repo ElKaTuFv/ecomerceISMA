@@ -15,13 +15,14 @@ nav{
     top: 0;
     left: 0;
     width: 100%;
-    height: 80px;
+    height: 50px;
     background: white;
     padding: 20px 40px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    box-shadow: 0 15px 15px black;
+    box-shadow: 0 15px 15px rgb(83, 83, 83);
+    background-color: rgb(241, 219, 121);
 }
 .logo{
     color: #333;
@@ -29,82 +30,268 @@ nav{
     font-size: 1.5em;
     font-weight: 700;
     text-transform: uppercase;
+    letter-spacing: 0.1em;
 }
-/* nav{
-    background-color: green;
+.grup{
     display: flex;
-    justify-content: space-around;
     align-items: center;
-    padding: 0 40px;
-    height: 50px;
+}
+nav ul {
     position: relative;
+    display: flex;
+    gap: 30px;
 }
-.menu ul li{
-    display: inline-block;
-}
-.menu li a {
-    padding: 5px 20px;
-}
-nav .menu li a {
-    color: white;
-    text-decoration: none;
-    font-weight: 200;
-    display: inline-block;
-}
-nav .menu li {
+nav ul li {
     list-style: none;
-    padding: 10px;
 }
-nav .menu li:hover {
-    background-color: aquamarine;
-    border-radius: 5px;
+nav ul li a {
+    position: relative;
+    text-decoration: none;
+    font-size: 1em;
+    color: #333;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
 }
-nav .menu .dropdown {
+nav ul li a::before {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    width: 100%;
+    height: 2px;
+    background: #333;
+    transform: scaleX(0);
+    transition: transform 0.5s ease-in-out;
+    transform-origin: right;
+}
+nav ul li a:hover::before {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+nav .search {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5em;
+    z-index: 10;
+    cursor: pointer;
+}
+.search-box {
+    position: absolute;
+    right: -100%;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    background: #fff;
+    align-items: center;
+    padding: 0 30px;
+    transition: 0.5s ease-in-out;
+}
+.search-box.active{
+    right: 0;
+}
+.search-box input {
+    width: 100%;
+    border: none;
+    outline: none;
+    height: 50px;
+    color: #333;
+    font-size: 1.25em;
+    background: #fff;
+    border-bottom: solid 1px #333;
+}
+.searchbtn{
+    position: relative;
+    left: 30px;
+    top: 2.5px;
+    transition: 0.5s ease-in-out;
+}
+.searchbtn.active {
+    left: 0;
+
+}
+.closebtn {
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.5s;
+    scale: 0;
+}
+.closebtn.active {
+    opacity: 1;
+    visibility: visible;
+    transition: 0.5s;
+    scale: 1;
+}
+.menuToggle {
+    position: relative;
     display: none;
 }
-nav ul li:hover .dropdown {
-    display: block;
-    background-color: green;
-    position: absolute;
-    margin: 10px;
-    padding: 5px;
-    border-radius: 4px;
-    border: solid red 1px;
-}
 
-.search-box {
-    background-color: aquamarine;
-    height: 18px;
-    padding: 7px 15px;
-    border-radius: 50px;
-    float: none;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+.content {
+    padding-top: 70px;
+    background-color: rgb(240, 201, 169);
+
 }
-.search-box input{
-    border: none;
-    background: none;
-    outline: none;
+.banner{
+    display: flex;
+    width: 100%;
+    transition: 2s;
 }
-.search-box button {
-    border: none;
-    background: none;
-    outline: none;
+.banner img{
+    width: 100%;
+    height: auto;
 }
-.btn-top button{
-    border: none;
-    background: none;
-    outline: none;
-    padding: 10px;
-    color: white;
-    margin: 20px;
-    font-size: 20px;
+.wrapper {
+    width: 800px;
+    margin: auto;
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+}
+#slide-1:target ~ .banner {
+    margin-left: 0px;
+}
+#slide-2:target ~ .banner {
+    margin-left: -100%;
+}
+#slide-3:target ~ .banner {
+    margin-left: -200%;
+}
+#slide-4:target ~ .banner {
+    margin-left: -300%;
+}
+.scrol a {
+    display: inline-block;
+    height: 10px;
+    width: 10px;
+    background-color: #dedede;
+    font-size: 0px;
+    border-radius: 50%;
+    margin: 3px;
     
 }
-.btn-top button:hover {
-    color: black;
-    background-color: aquamarine;
-} */
+.scrol a:hover{
+    background-color: #666;
+    transition: 1s;
+}
+.scrol {
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    text-align: center;
+    margin-top: -40px;
+}
+.opening {
+    text-align: center;
+    width: 50%;
+    margin: auto;
+}
 
+.grid {
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    margin: 80px;
+    align-items: center;
+    grid-gap: 30px;
+}
+img{
+    object-fit: cover;
+}
+.row {
+    display: flex;
+}
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    max-width: 300px;
+    text-align: center;
+    font-family: arial;
+    background-color: rgb(241, 229, 220);
+    border: 5px solid rgb(241, 229, 220);
+    border-radius: 10px;
+  }
+  .card img {
+    border-radius: 5px;
+  }
+  .price {
+    color: grey;
+    font-size: 22px;
+  }
+  
+  .card button {
+    border: none;
+    outline: 0;
+    padding: 12px;
+    color: white;
+    background-color: #000;
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+    font-size: 18px;
+    border-radius: 10px;
+  }
+  
+  .card button:hover {
+    opacity: 0.7;
+  }
+  .kategori{
+    margin-left: 80px;
+    margin-bottom: -60px;
+  }
+@media (max-width: 880px){
+    .searchbtn{
+        left: 0;
+    }
+    .menuToggle {
+        position: relative;
+        display: block;
+        font-size: 2em;
+        cursor: pointer;
+        transform: translateX(30px);
+        z-index: 10;
+    }
+    nav .navigasi {
+        position: absolute;
+        opacity: 0;
+        visibility: hidden;
+        left: 100%;
+    }
+    nav.open .navigasi{
+        top: 80px;
+        opacity: 1;
+        visibility: visible;
+        left: 0;
+        display: flex;
+        flex-direction: column;
+        background: #fff;
+        width: 100%;
+        height: calc(100vh - 80px);
+        padding: 40px;
+        border-top: 1px solid #333;
+    }
+    nav.open .navigasi li a{
+        font-size: 1.25em;
+    }
+    .hide {
+        display: none;
+    }
+    .wrapper {
+        width: 95%;
+    }
+}
+@media (max-width: 1000px){
+    .grid{
+        grid-template-columns: repeat(3,1fr);
+    }
+}
+@media (max-width: 800px){
+    .grid{
+        grid-template-columns: repeat(2,1fr);
+    }
+}
+@media (max-width: 580px){
+    .grid{
+        grid-template-columns: repeat(1,1fr);
+    }
+}
