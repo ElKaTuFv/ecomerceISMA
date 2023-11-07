@@ -546,6 +546,7 @@ footer {
         flex-wrap: wrap;
         text-align: center;
     }
+
 }
 @media (max-width: 800px){
     .grid{
@@ -553,6 +554,11 @@ footer {
     }
 
 
+}
+@media (max-width: 790px){
+    #about .about-me img{
+        width: 200px;
+    }
 }
 @media (max-width: 580px){
     .grid{

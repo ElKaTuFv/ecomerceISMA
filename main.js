@@ -24,6 +24,12 @@
         closebtn.classList.remove('active');
         searchbtn.classList.remove('active');
     }
+    navigasi.onclick = function(){
+        header.classList.toggle('open');
+        searchbox.classList.remove('active');
+        closebtn.classList.remove('active');
+        searchbtn.classList.remove('active');
+    }
 
 
     document.querySelectorAll('.btnDetail').forEach( item => {
